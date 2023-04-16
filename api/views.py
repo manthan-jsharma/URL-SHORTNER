@@ -17,7 +17,7 @@ def makeshorturl(request):
         shorturl=shorturl
     )
     longurl = data['longurl']
-    shorturl = "http://localhost:8000/" + shorturl
+    shorturl = "https://url-shortner-backend-production-6c89.up.railway.app/" + shorturl
     return Response({'longurl': longurl, 'shorturl': shorturl})
 
 
