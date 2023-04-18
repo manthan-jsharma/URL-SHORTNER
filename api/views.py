@@ -17,7 +17,7 @@ def makeshorturl(request):
         shorturl=shorturl
     )
     longurl = data['longurl']
-    shorturl = "https://url-shorty.up.railway.app/" + shorturl
+    shorturl = "http://127.0.0.1:8000/" + shorturl
     return Response({'longurl': longurl, 'shorturl': shorturl})
 
 
@@ -29,3 +29,8 @@ def redirectUrl(request, shorturl):
 
     if obj is not None:
         return redirect(obj.longurl)
+
+@api_view(['POST'])
+def fetchallurl(request):
+    allUrls = urlShortener.objects.all().values() 
+    return Response(allUrls)

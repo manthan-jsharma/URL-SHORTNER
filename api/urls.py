@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('shorten/', views.makeshorturl),
-    path('<str:shorturl>', views.redirectUrl)
+    path('<str:shorturl>', views.redirectUrl),
+    path('fetchallurl/', views.fetchallurl )
 ]
