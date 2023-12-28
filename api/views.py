@@ -17,7 +17,6 @@ def makeshorturl(request):
         shorturl=shorturl
     )
     longurl = data['longurl']
-    shorturl = "http://127.0.0.1:8000/" + shorturl
     return Response({'longurl': longurl, 'shorturl': shorturl})
 
 
